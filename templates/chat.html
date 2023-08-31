@@ -1,0 +1,20 @@
+<div hx-get="/polling" hx-trigger="every 1s" hx-target="#chat-container" hx-swap="outerHTML">
+    <div id="chat-container" class="chat-container">
+        {% for msg in msgs %}
+        <div class="chat-msg-{% if msg.me %}me{% else %}them{% endif %}">
+            <div class="username">{{msg.user}}</div>
+            <blockquote>{{msg.text}}</blockquote></div>
+        {% endfor %}
+    </div>
+    <form hx-on::after-request="this.reset()"
+          onsubmit="return false"
+          hx-include="[name=chat_input]"
+          class="controls-container"
+          hx-trigger="keydown[keyCode == 13] from:#chat-input, click from:#chat-send-btn"
+          hx-post="/send"
+          hx-target="#chat-container"
+          hx-swap="outerHTML" >
+        <sl-input name="chat_input" id="chat-input" class="chat-input"></sl-input>
+        <sl-button id="chat-send-btn">Send</sl-button>
+    </form>
+</div>

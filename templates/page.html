@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/themes/light.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.8.0/cdn/shoelace-autoloader.js"></script>
+    <style>
+        * {
+            font-family: var(--sl-font-sans);
+        }
+
+        .chat-container {
+            width: 50%;
+            border: 1px solid gray
+        }
+        .chat-msg-me {
+          text-align: right;
+        }
+        .chat-msg-me > blockquote {
+            background-color: #4796fb;
+            color: white;
+        }
+        .chat-msg-them > blockquote {
+            background-color: lightgray;
+        }
+        blockquote {
+            padding: .3em;
+            display: inline-block;
+            max-width: 60%;
+            text-align: left;
+            border-radius: .3em;
+            font-family: var(--sl-font-sans);
+        }
+        .controls-container {
+            width: 50%;
+            margin-top: 1em;
+            display: flex;
+            flex-direction: row;
+        }
+        .chat-input {
+            flex-grow: 1;
+            margin-right: .3em;
+        }
+        .username {
+margin-left: 5em;
+  font-size: .5em;
+  margin-bottom: -1.5em;
+        }
+    </style>
+</head>
+<body>
+    {{body}}
+</body>
+</html>

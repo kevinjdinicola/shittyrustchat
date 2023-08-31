@@ -1,0 +1,7 @@
+<div id="chat-container" class="chat-container">
+  {% for msg in msgs %}
+  <div class="chat-msg-{% if msg.me %}me{% else %}them{% endif %}">
+    <div class="username">{{msg.user}}</div>
+    <blockquote>{{msg.text}}</blockquote></div>
+  {% endfor %}
+</div>

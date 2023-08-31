@@ -1,0 +1,3 @@
+<h1>What's your name?</h1>
+<sl-input name="username"></sl-input>
+<sl-button hx-push-url="/chat" hx-post="/enter" hx-include="[name=username]" hx-target="body" id="enter-chat-btn">Enter</sl-button>
